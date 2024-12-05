@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from "react-router-dom";
+import { authContext } from './AuthProvider';
 const Navbar = () => {
+  const {user,singOutUser}=useContext(authContext)
     const links=<>
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/allmovies'>All Movies</NavLink></li>
@@ -9,6 +11,17 @@ const Navbar = () => {
     <li><NavLink to='/about'>About</NavLink></li>
    
     </>
+
+const handleSingOut=()=>{
+  singOutUser();
+  then((result)=>{
+    
+  })
+  .catch(error=>{
+   
+    
+  })
+} 
     return (
         <div className="navbar bg-[#BEE3E2]">
         <div className="navbar-start">
@@ -41,16 +54,20 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {/* {
+          {
             user ? 
             <>
             <div><img src={user.photoURL} alt="User Avatar" className="w-12 h-12 rounded-full" title={user.displayName || 'User'} /></div>
               
               <a onClick={handleSingOut} className="btn ml-2 bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white">Sing Out</a>
             </> :
-            <button className="btn w-20  bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white" ><Link to='/login'>Login</Link></button>
-          } */}
-          <button className='btn'>Login</button>
+            <>
+              <button className="btn w-20  bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white" ><Link to='/login'>Login</Link></button>
+              <button className="btn w-20  bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white" ><Link to='/register'>Register</Link></button>
+            </>
+          
+          }
+         
         </div>
       </div>
     );
