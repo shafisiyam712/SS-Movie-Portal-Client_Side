@@ -6,6 +6,7 @@ import { auth } from "../Firebase/FirebaseInt";
 
 export const authContext=createContext(null)
 
+
 const AuthProvider = ({children}) => {
     const provider=new GoogleAuthProvider()
     const [user,setUser]=useState(null)
