@@ -8,6 +8,7 @@ import MyFav from "../Pages/MyFav"
 import About from "../Pages/About"
 import Register from "../Pages/Register"
 import Login from "../Pages/Login"
+import PrivateRoute from "../Components/PrivateRoute"
 
 
 const routes = createBrowserRouter([
@@ -26,11 +27,11 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/addmovies',
-                element: <AddMovies></AddMovies>,
+                element: <PrivateRoute> <AddMovies></AddMovies></PrivateRoute>,
             },
             {
                 path: '/myfav',
-                element: <MyFav></MyFav>,
+                element:<PrivateRoute> <MyFav></MyFav></PrivateRoute>,
             },
             {
                 path: '/about',
