@@ -6,6 +6,7 @@ import { authContext } from '../Components/AuthProvider';
 
 const AddMovie = () => {
     const {user}=useContext(authContext)
+    const [error,setError] = useState("")
     // const [rating, setRating] = useState(0);
 
     //     // Function to handle rating change
@@ -16,6 +17,7 @@ const AddMovie = () => {
     
 
     const handleAddmovie = e => {
+        setError("")
         e.preventDefault();
 
         const MoviePoster = e.target.photoUrl.value;
@@ -29,19 +31,19 @@ const AddMovie = () => {
         const urlRegex = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(:\d+)?(\/[^\s]*)?$/i;
 
         if (!urlRegex.test(MoviePoster)) {
-            alert("Invalid URL: Please enter a valid link.");
+            setError("Invalid URL: Please enter a valid link.");
             return;
         }
         if (!MovieTitle || MovieTitle.length < 2) {
-            alert("Invalid Movie Title: Please enter at least 2 characters.");
-            return; // Stop form submission if validation fails
+            setError("Invalid Movie Title: Please enter at least 2 characters.");
+            return; 
         }
         if (isNaN(Duration) || Duration <= 60) {
-            alert("Invalid Duration: Please enter a number greater than 60 minutes.");
-            return; // Stop form submission if validation fails
+            setError("Invalid Duration: Please enter a number greater than 60 minutes.");
+            return; 
         }
         if (!Summary.trim() || Summary.length < 10) {
-            alert("Summary must be at least 10 characters long and cannot be empty.");
+            setError("Summary must be at least 10 characters long and cannot be empty.");
             return;
         }
         const newMovie = { MoviePoster, MovieTitle, Genre, Duration, Duration, ReleaseYear, Rating, Summary ,userEmail}
@@ -177,7 +179,7 @@ const AddMovie = () => {
                     </div>
 
 
-
+                    {error && <p className="text-red-500">{error}</p>}
                     <div className="form-control mt-6">
                         <button className="btn btn-primary">Add Movie</button>
                     </div>
