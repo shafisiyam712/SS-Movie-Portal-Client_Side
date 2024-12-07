@@ -28,13 +28,13 @@ const MovieCard = ({movies}) => {
                 <h5 className='font-bold mt-2'>Rating: {Rating}</h5>
 
                 <Link to={`/movies/${_id}`}>
-                     <button className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-1/2 hover:text-white hover:bg-[#1E2A47]'>View Details</button>
+                     <button className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-1/2 hover:text-white hover:bg-[#1E2A47]'>See Details</button>
                 </Link>
                
             </div>
         </div>
 
-
+      
         </div>
     );
 };

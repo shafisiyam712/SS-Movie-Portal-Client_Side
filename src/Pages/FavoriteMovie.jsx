@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MyFav = () => {
+const FavoriteMovie = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const MyFav = () => {
     );
 };
 
-export default MyFav;
+export default FavoriteMovie;

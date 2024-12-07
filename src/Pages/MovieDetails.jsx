@@ -1,23 +1,52 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 const MovieDetails = () => {
+  const navigate=useNavigate()
     const data=useLoaderData();
-    // const { movieTitle} = useParams();
-    // console.log(movieTitle);
     
-    // const [card,setCard]=useState({})
-    // useEffect(() => {
-    //     const singleData = data.find(card => card._id==_id)
-    //     setCard(singleData)
-    //   }, [])
       const {_id,MoviePoster,MovieTitle,Genre,Duration,ReleaseYear,Rating,Summary,userEmail}=  data 
     console.log(data);
+
+    const handleDelete = _id => {
+      Swal.fire({
+          title: "Are you sure?",
+          text: "You won't be able to revert this!",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+          if (result.isConfirmed) {
+
+              fetch(`http://localhost:5000/movies/${_id}`, {
+                  method: 'DELETE'
+              })
+                  .then(res => res.json())
+                  .then(data => {
+                      // console.log(data);
+                      if (data.deletedCount) {
+                          Swal.fire({
+                              title: "Deleted!",
+                              text: "Your movie has been deleted.",
+                              icon: "success"
+                          });
+                          navigate('/allmovies')
+
+                      }
+                  })
+
+          }
+      });
+    }
     
     return (
-        <div className="w-1/3 mx-auto mt-10">
+        <div className="">
              
-        <div className='card border border-rounded-xl shadow-xl overflow-hidden p-4 mb-2 gap-3'>
+        <div className='card w-2/3 mx-auto mt-10 border border-rounded-xl shadow-xl overflow-hidden p-4 mb-2 gap-3'>
         <div className='mb-2  space-y-4 '>
     <img className='w-full h-60 border rounded-xl' src={MoviePoster} alt={`Cover picture of the title`} />
 </div>  
@@ -40,7 +69,18 @@ const MovieDetails = () => {
 
         </div>
     </div>
-
+    <div className='flex justify-center gap-5 mt-10'>
+       <Link to={`/favorite`}>
+                     <button className='btn  font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-40 hover:text-white hover:bg-[#1E2A47]'>Add to favorite</button>
+                </Link>
+      
+                     <button  onClick={() => handleDelete(_id)} className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-40 hover:text-white hover:bg-[#1E2A47]'>Delete Movie</button>
+               
+       <Link to={`/update/${_id}`}>
+                     <button className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-40 hover:text-white hover:bg-[#1E2A47]'>Update Movie</button>
+                </Link>
+       </div>
+       
 
     </div>
     );

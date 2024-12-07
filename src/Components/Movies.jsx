@@ -1,6 +1,6 @@
 import React from 'react';
 import MovieCard from './MovieCard';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const Movies = () => {
     const data=useLoaderData()
@@ -14,8 +14,15 @@ const Movies = () => {
            
              <MovieCard key={movies._id} movies={movies}></MovieCard>))
              }
+             
          </div>
-    
+        
+         <div className='w-1/5 mx-auto mt-16'>
+       <Link to={`/allmovies`}>
+                     <button className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-1/2 hover:text-white hover:bg-[#1E2A47]'>See All Movies</button>
+                </Link>
+       </div>
+      
      
      </div>
     );

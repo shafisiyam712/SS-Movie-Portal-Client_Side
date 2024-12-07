@@ -3,8 +3,6 @@ import MainLayout from "../MainLayout/MainLayout"
 import Home from "../Pages/Home"
 import Movies from "../Components/Movies"
 import AllMovies from "../Pages/AllMovies"
-// import AddMovies from "../Pages/AddMovies"
-import MyFav from "../Pages/MyFav"
 import About from "../Pages/About"
 import Register from "../Pages/Register"
 import Login from "../Pages/Login"
@@ -12,6 +10,8 @@ import PrivateRoute from "../Components/PrivateRoute"
 import MovieDetails from "../Pages/MovieDetails"
 import AddMovie from "../Pages/AddMovie"
 import ErrorPage from "../Pages/ErrorPage"
+import FavoriteMovie from "../Pages/FavoriteMovie"
+import UpdateMovie from "../Pages/UpdateMovie"
 
 
 const routes = createBrowserRouter([
@@ -46,13 +46,15 @@ const routes = createBrowserRouter([
                 element: <AllMovies></AllMovies>,
                 loader: ()=>fetch('http://localhost:5000/movies'),
             },
-            // {
-            //     path: '/addmovies',
-            //     element: <PrivateRoute> <AddMovies></AddMovies></PrivateRoute>,
-            // },
+          
             {
-                path: '/myfav',
-                element:<PrivateRoute> <MyFav></MyFav></PrivateRoute>,
+                path: '/favorite',
+                element:<PrivateRoute> <FavoriteMovie></FavoriteMovie></PrivateRoute>,
+            },
+            {
+                path: '/update/:id',
+                element:<PrivateRoute> <UpdateMovie></UpdateMovie></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/movies/${params.id}`)
             },
             {
                 path: '/about',
