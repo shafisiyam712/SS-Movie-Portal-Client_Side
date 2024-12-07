@@ -7,7 +7,7 @@ const Header = () => {
       
               <div className="text-center my-20 space-y-2 ">
             <h1 className="font-extrabold text-[#1E2A47] text-2xl">Our Featured movies</h1>
-            <h2>Join us as we traverse lush forests, scale majestic mountains, and uncover the secrets of the wild—sustainably and passionately. Your next adventure awaits!</h2>
+            <h2>Here you will see the top rated movies of our site.You also can add movies in our site and make your movie feature like others!!!</h2>
         </div>
       
     );

@@ -1,14 +1,42 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useEffect, useState } from "react";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { authContext } from '../Components/AuthProvider';
 const MovieDetails = () => {
   const navigate=useNavigate()
     const data=useLoaderData();
-    
+    const { addFavorite,user,favorites } = useContext(authContext);
+    //const Email=user.email
       const {_id,MoviePoster,MovieTitle,Genre,Duration,ReleaseYear,Rating,Summary,userEmail}=  data 
     console.log(data);
+  //   const handleAddToFavorite = () => {
+  //     addFavorite(data); 
+
+  //     navigate("/favorite"); 
+  // };
+  const handleAddToFavorite = (data) => {
+    const movieExists = favorites.find((fav) => fav._id === data._id);
+    if (movieExists) {
+      Swal.fire({
+        title: "Movie Already Exists",
+        text: "This movie is already in your favorites list.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    } else {
+      addFavorite(data);
+      Swal.fire({
+        title: "Added!",
+        text: "Your movie has been added to favorites.",
+        icon: "success",
+        timer: 1500,
+        showConfirmButton: false,
+      });
+      navigate("/favorite"); 
+    }
+  };
 
     const handleDelete = _id => {
       Swal.fire({
@@ -43,6 +71,8 @@ const MovieDetails = () => {
       });
     }
     
+  
+    
     return (
         <div className="">
              
@@ -70,9 +100,9 @@ const MovieDetails = () => {
         </div>
     </div>
     <div className='flex justify-center gap-5 mt-10'>
-       <Link to={`/favorite`}>
-                     <button className='btn  font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-40 hover:text-white hover:bg-[#1E2A47]'>Add to favorite</button>
-                </Link>
+       
+                     <button onClick={() => handleAddToFavorite(data)} className='btn  font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-40 hover:text-white hover:bg-[#1E2A47]'>Add to favorite</button>
+                
       
                      <button  onClick={() => handleDelete(_id)} className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-40 hover:text-white hover:bg-[#1E2A47]'>Delete Movie</button>
                

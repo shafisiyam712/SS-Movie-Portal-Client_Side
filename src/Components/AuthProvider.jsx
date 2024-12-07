@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable react/prop-types */
 import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/FirebaseInt";
@@ -37,16 +35,48 @@ const AuthProvider = ({children}) => {
     
     useEffect(()=>{
         const unSubscribe=onAuthStateChanged(auth,currentUser=>{
-            // console.log("currently logged",currentUser);
+           
              setUser(currentUser)  
              setLoading(false)
+
              
+      if (!currentUser) {
+        setFavorites([]); 
+      }
              
         })
         return()=>{
             unSubscribe()
         }
     } ,[])
+
+    const [favorites, setFavorites] = useState([]);
+
+    
+  useEffect(() => {
+    if (user?.email) {
+      const storedFavorites = JSON.parse(localStorage.getItem(user.email)) || [];
+      setFavorites(storedFavorites);
+    } else {
+      setFavorites([]); 
+    }
+  }, [user?.email]);
+
+  const addFavorite = (movie) => {
+    const updatedFavorites = [...favorites, movie];
+    setFavorites(updatedFavorites);
+    localStorage.setItem(user.email, JSON.stringify(updatedFavorites));
+  };
+
+  const removeFavorite = (movieId) => {
+    const updatedFavorites = favorites.filter((movie) => movie._id !== movieId);
+    setFavorites(updatedFavorites);
+    localStorage.setItem(user.email, JSON.stringify(updatedFavorites));
+  };
+
+  const clearUserDataOnLogout = () => {
+    setFavorites([]); 
+  };
 
     const authMember={
         loading,
@@ -56,6 +86,10 @@ const AuthProvider = ({children}) => {
         singInWithGoogle,
         manageProfile,
         user,
+        addFavorite,
+        favorites ,
+        removeFavorite,
+        clearUserDataOnLogout,
     }
 
     return (
