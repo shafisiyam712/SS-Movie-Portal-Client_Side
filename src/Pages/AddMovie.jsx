@@ -46,7 +46,7 @@ const AddMovie = () => {
             setError("Summary must be at least 10 characters long and cannot be empty.");
             return;
         }
-        const newMovie = { MoviePoster, MovieTitle, Genre, Duration, Duration, ReleaseYear, Rating, Summary ,userEmail}
+        const newMovie = { MoviePoster, MovieTitle, Genre, Duration, ReleaseYear, Rating, Summary ,userEmail}
         console.log(newMovie)
 
         // send data to the server and database

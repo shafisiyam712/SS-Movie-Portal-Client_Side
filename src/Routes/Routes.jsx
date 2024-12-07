@@ -11,13 +11,14 @@ import Login from "../Pages/Login"
 import PrivateRoute from "../Components/PrivateRoute"
 import MovieDetails from "../Pages/MovieDetails"
 import AddMovie from "../Pages/AddMovie"
+import ErrorPage from "../Pages/ErrorPage"
 
 
 const routes = createBrowserRouter([
     {   
         path: '/',
         element: <MainLayout></MainLayout>,
-        //errorElement: <ErrorPage></ErrorPage>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
