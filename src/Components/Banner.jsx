@@ -4,8 +4,8 @@ import React from 'react';
 
 const Banner = () => {
   return (
-    <div className="w-11/12 mx-auto border rounded-xl p-5 mt-5 shadow-xl">
-      <div className="carousel rounded-xl">
+    <div className=" mt-5 shadow-xl">
+      <div className="carousel">
         <div id="slide1" className="carousel-item relative w-full">
           <img
             src="https://i.ibb.co.com/PQMJgZh/Mount-Everest-Ph-Feng-Wei-Getty2-56a16b185f9b58b7d0bf2e87.jpg"
