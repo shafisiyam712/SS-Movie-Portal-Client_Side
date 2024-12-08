@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = ({movies}) => {
     const {_id,MoviePoster,MovieTitle,Genre,Duration,ReleaseYear,Rating,Summary}= movies 
-    //const [one,two,three]=EcoFriendlyFeatures
+   
     return (
         <div className="w-11/12 mx auto">
              

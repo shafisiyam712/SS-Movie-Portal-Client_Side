@@ -6,7 +6,7 @@ const ErrorPage = () => {
         navigate('/')
     }
     return (
-        <div className="flex flex-col justify-center items-center mt-20 gap-3">
+        <div className="flex flex-col justify-center items-center gap-3">
             <img src={errorImg} alt="" />
             <h1 className="text-3xl">Page Not Found</h1>
             <div>

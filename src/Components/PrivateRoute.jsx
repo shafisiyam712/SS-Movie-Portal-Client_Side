@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
+
 import React, { useContext } from 'react';
 import { authContext } from './AuthProvider';
 import { Navigate } from 'react-router-dom';

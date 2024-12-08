@@ -11,11 +11,7 @@ const MovieDetails = () => {
     //const Email=user.email
       const {_id,MoviePoster,MovieTitle,Genre,Duration,ReleaseYear,Rating,Summary,userEmail}=  data 
     console.log(data);
-  //   const handleAddToFavorite = () => {
-  //     addFavorite(data); 
-
-  //     navigate("/favorite"); 
-  // };
+ 
   const handleAddToFavorite = (data) => {
     const movieExists = favorites.find((fav) => fav._id === data._id);
     if (movieExists) {
@@ -50,7 +46,7 @@ const MovieDetails = () => {
       }).then((result) => {
           if (result.isConfirmed) {
 
-              fetch(`http://localhost:5000/movies/${_id}`, {
+              fetch(`https://milestone-10-server-side.vercel.app/movies/${_id}`, {
                   method: 'DELETE'
               })
                   .then(res => res.json())

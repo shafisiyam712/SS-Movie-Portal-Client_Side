@@ -9,9 +9,9 @@
 SS Movie portal is a website where you can see multiple movies, here are the best top rated movie adding by our user.You also can add movies and make your favorites movie collection.This website has a beautifull user interface and provide a smooth user experience. 
 ## Live Site Link
 
-Firebase Link:https://my-eco-adventure.web.app/
+Client Side Link: https://my-movie-site-1a1ab.web.app/
 
-Netlify Link: https://vocal-flan-6d7565.netlify.app/
+Server Side Link: https://milestone-10-server-side.vercel.app/
 ## Requirement Document Link
 
 https://drive.google.com/file/d/1BkYr6dNMlkpwnD3sOKAF0Co2XPq_stXo/view?usp=sharing

@@ -50,7 +50,7 @@ const AddMovie = () => {
         console.log(newMovie)
 
         // send data to the server and database
-        fetch('http://localhost:5000/movies', {
+        fetch('https://milestone-10-server-side.vercel.app/movies', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

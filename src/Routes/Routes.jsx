@@ -27,7 +27,7 @@ const routes = createBrowserRouter([
                     {
                         path: '/',
                         element: <Movies></Movies>,
-                        loader: ()=>fetch('http://localhost:5000/movies/topRated'),
+                        loader: ()=>fetch('https://milestone-10-server-side.vercel.app/movies/topRated'),
                       },
                 ]
             },
@@ -37,14 +37,14 @@ const routes = createBrowserRouter([
             },
             {
                 path: '/movies/:id',
-                element: <MovieDetails></MovieDetails>,
-                //loader: ()=>fetch('http://localhost:5000/movies/topRated'),
-                loader: ({ params }) => fetch(`http://localhost:5000/movies/${params.id}`)
+                element: <PrivateRoute><MovieDetails></MovieDetails></PrivateRoute>,
+              
+                loader: ({ params }) => fetch(`https://milestone-10-server-side.vercel.app/movies/${params.id}`)
             },
             {
                 path: '/allmovies',
                 element: <AllMovies></AllMovies>,
-                loader: ()=>fetch('http://localhost:5000/movies'),
+                loader: ()=>fetch('https://milestone-10-server-side.vercel.app/movies'),
             },
           
             {
@@ -54,7 +54,7 @@ const routes = createBrowserRouter([
             {
                 path: '/update/:id',
                 element:<PrivateRoute> <UpdateMovie></UpdateMovie></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/movies/${params.id}`)
+                loader: ({ params }) => fetch(`https://milestone-10-server-side.vercel.app/movies/${params.id}`)
             },
             {
                 path: '/about',

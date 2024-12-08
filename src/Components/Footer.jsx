@@ -10,8 +10,6 @@ const Footer = () => {
             <h1 className="font-extrabold text-2xl text-white">SS-MOVIE PORTAL</h1>
           </div>
           <p className="text-white">
-            {/* Location: 39/2 Hajigonj,NG<br />
-            1400 <br /> */}
             Phone: +8801644898184 <br />
             Email: ShafiSiyam674@gmail.com <br />
             Dont forget to visit our social sites <br />
@@ -65,9 +63,6 @@ const Footer = () => {
         </div>
         
       </div>
-       {/* <div className=' border border-red-600 my-5'>
-       <h3 className="text-white text-lg text-center">Drop a Message</h3>
-       </div> */}
        <hr />
       <h3 className="text-white text-lg text-center">Copyright@2024</h3>
       </div>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useContext, useState } from "react";
-//import { authContext } from "../Components/AuthProvider";
 import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';

@@ -6,11 +6,6 @@ const FavoriteMovie = () => {
     console.log(favorites);
     const {_id,MoviePoster,MovieTitle,Genre,Duration,ReleaseYear,Rating,Summary,userEmail}=  favorites
 
-    // const Email=user.email
-    // const handleRemove = (movieId) => {
-    //     removeFavorite(movieId);
-    // };
-    // Ensure favorites are cleared only on logout
   useEffect(() => {
     if (!user?.email) {
       clearUserDataOnLogout();
