@@ -29,7 +29,7 @@ const About = () => {
                     We aim to become the go-to platform for movie enthusiasts everywhere, fostering a love for cinema and connecting people through their shared passion.</p>
             </div>
             <div className=" h-32 flex flex-col justify-center text-center w-full space-y-3 mt-10">
-                <h1 className="text-white text-2xl font-bold mb-5">So Join Us</h1>
+                <h1 className="text-white text-2xl font-bold mb-5 mt-5">So Join Us</h1>
                 <p className="text-white">
                 Whether you're here to explore, contribute, or build your personal collection, SS Movie Portal invites you to be part <br /> of our growing family. Together, let’s create the largest and most diverse movie database, one film at a time
                 </p>

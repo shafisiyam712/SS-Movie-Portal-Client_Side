@@ -130,7 +130,7 @@ const UpdateMovie = () => {
                             <label className="label">
                                 <span className="label-text text-white">Release Year</span>
                             </label>
-                            {/* <input type="number" name='releaseYear' placeholder="Release Year" className="input input-bordered" required /> */}
+                           
                             <select name="releaseYear" defaultValue={ReleaseYear} className="select select-bordered text-black" required>
                             <option value="" disabled selected>Select Year</option>
                                 <option value="2024">2024</option>
