@@ -42,7 +42,7 @@ const FavoriteMovie = () => {
   };   
     
     return (
-        <div>
+        <div className='mt-5'>
         <h1 className="text-2xl font-bold mb-4 text-center">Your Favorite Movies</h1>
         <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {favorites.length > 0 ? (
@@ -53,16 +53,21 @@ const FavoriteMovie = () => {
                             alt={movie.MovieTitle}
                             className="w-full h-60 object-cover rounded-lg mb-4"
                         />
+                        <div className='flex flex-col text-center items-center space-y-2'>
                         <h2 className="font-bold text-xl mb-2">{movie.MovieTitle}</h2>
-                        <p className="text-gray-600">Genre: {movie.Genre}</p>
-                        <p className="text-gray-600">Duration: {movie.Duration}</p>
-                        <p className="text-gray-600">Release Year: {movie.ReleaseYear}</p>
-                        <p className="text-gray-600">Rating: {movie.Rating}</p>
+                        <p className="text-white">Genre: {movie.Genre}</p>
+                        <p className="text-white">Duration: {movie.Duration}min</p>
+                        <p className="text-white">Release Year: {movie.ReleaseYear}</p>
+                        <p className="text-white">Rating: {movie.Rating}</p>
+
                         <button   onClick={() => handleRemove(movie._id)} className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-40 hover:text-white hover:bg-[#1E2A47]'>Delete Movie</button>
+                        </div>
+                       
+                        
                     </div>
                 ))
             ) : (
-                <p className="text-gray-500">No favorite movies added yet.</p>
+                <p className="text-white text-center">No favorite movies added yet</p>
             )}
         </div>
     </div>

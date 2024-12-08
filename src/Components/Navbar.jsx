@@ -23,7 +23,7 @@ const handleSingOut=()=>{
   })
 } 
     return (
-        <div className="navbar bg-[#BEE3E2]">
+        <div className="navbar bg-[#1E2A47]">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -46,7 +46,7 @@ const handleSingOut=()=>{
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl font-bold text-[#1E2A47]">EC0-ADVENTURE</a>
+          <a className="btn btn-ghost text-xl font-bold text-white">SS-MOVIE PORTAL</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

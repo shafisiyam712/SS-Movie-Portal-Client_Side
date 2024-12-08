@@ -58,40 +58,40 @@ const Register = () => {
             })
     }
     return (
-        <div className="hero min-h-screen">
-        <div className="hero-content flex-col lg:flex">
+        <div className="hero min-h-screen ">
+        <div className="hero-content flex-col lg:flex ">
           <div className="text-center lg:text-left">
             <h1 className="text-5xl font-bold">Register now!</h1>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form onSubmit={handleRegister}  className="card-body">
+            <form onSubmit={handleRegister}  className="card-body bg-[#1E2A47]">
 
             <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Name</span>
+                  <span className="label-text text-white">Name</span>
                 </label>
-                <input type="text" name='name' placeholder="Name" className="input input-bordered" required />
+                <input type="text" name='name' placeholder="Name" className="input input-bordered text-black" required />
               </div>   
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text  text-white">Email</span>
                 </label>
-                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                <input type="email" name='email' placeholder="email" className="input input-bordered  text-black" required />
               </div>
 
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Photo-Url</span>
+                  <span className="label-text  text-white">Photo-Url</span>
                 </label>
-                <input type="text" name='image' placeholder="url" className="input input-bordered" required />
+                <input type="text" name='image' placeholder="url" className="input input-bordered  text-black" required />
               </div>
 
               <div className="form-control relative">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text  text-white">Password</span>
                 </label>
-                <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered" required />
+                <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered text-black" required />
 
                 <button
                             type="button"
@@ -109,10 +109,10 @@ const Register = () => {
               <button className='btn font-bold border border-[#1E2A47]  text-[#1E2A47] hover:text-white hover:bg-[#1E2A47]'>Register</button>
               </div>
               <p className='ml-4 mb-4 cursor-pointer'>
-                Already have an account? please <Link to='/login' className="text-blue-500 hover:underline hover:text-[#1E2A47]">Login</Link>
+                Already have an account? please <Link to='/login' className="text-blue-500 hover:underline hover:text-white">Login</Link>
               </p>
             </form>
-            <div className="flex gap-1 justify-center items-center">
+            <div className="flex gap-1 justify-center items-center bg-[#1E2A47]">
                     <FcGoogle className="h-14 w-14 mb-3"></FcGoogle>
                     <button onClick={HandleWithGoogle} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">Google Sing In</button>
                     </div>

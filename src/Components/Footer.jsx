@@ -2,17 +2,19 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="bg-[#1E2A47] md:h-96 mt-10 p-16 flex flex-col md:flex-row">
+
+      <div className='bg-[#1E2A47] md:h-96'>
+          <div className="bg-[#1E2A47] mt-10 p-16 flex flex-col md:flex-row">
         <div className="md:w-2/5 mb-10 md:mb-0">
           <div className="flex mb-3">
-            <h1 className="font-extrabold text-2xl text-white">ECO-ADVENTURE</h1>
+            <h1 className="font-extrabold text-2xl text-white">SS-MOVIE PORTAL</h1>
           </div>
           <p className="text-white">
-            Location: 39/2 Hajigonj,NG<br />
-            1400 <br />
+            {/* Location: 39/2 Hajigonj,NG<br />
+            1400 <br /> */}
             Phone: +8801644898184 <br />
             Email: ShafiSiyam674@gmail.com <br />
-            Openings hours: 9.00 AM - 6.00 PM <br />
+            Dont forget to visit our social sites <br />
           </p>
           
           <div className="flex gap-2 mt-4">
@@ -57,13 +59,20 @@ const Footer = () => {
             type="text"
           />
           <div>
-            <button className="btn  bg-white text-[#1E2A47] hover:bg-[#BEE3E2] hover:text-white w-52 md:ml-32">Subscribe</button>
+            <button className="btn  bg-white text-[#1E2A47] hover:bg-[#BEE3E2] hover:text-white w-52 md:ml-32">Send</button>
           </div>
           
         </div>
         
-      </footer>
-    );
+      </div>
+       {/* <div className=' border border-red-600 my-5'>
+       <h3 className="text-white text-lg text-center">Drop a Message</h3>
+       </div> */}
+       <hr />
+      <h3 className="text-white text-lg text-center">Copyright@2024</h3>
+      </div>
+        
+    )
 };
 
 export default Footer;

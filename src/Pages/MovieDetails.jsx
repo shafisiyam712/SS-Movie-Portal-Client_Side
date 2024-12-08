@@ -74,40 +74,37 @@ const MovieDetails = () => {
   
     
     return (
-        <div className="">
+        <div className="w-11/12 mx-auto">
              
         <div className='card w-2/3 mx-auto mt-10 border border-rounded-xl shadow-xl overflow-hidden p-4 mb-2 gap-3'>
         <div className='mb-2  space-y-4 '>
     <img className='w-full h-60 border rounded-xl' src={MoviePoster} alt={`Cover picture of the title`} />
 </div>  
-  <div className='flex gap-2'>
-  <h4 className='font-extrabold text-xl'>{MovieTitle}</h4>
+  <div className='flex gap-2 justify-center'>
+  <h4 className='font-extrabold text-xl text-center'>Movie Title: {MovieTitle}</h4>
   </div>
   
 
-        <div className='mt-3 flex flex-col gap-3 mb-2'>
-        {/* <h4 className="font-bold">Eco-Features:</h4>
-              <div>
-                1.{one} <br /> 
-                2.{two} <br />
-                3.{three} <br />  <br />
-              </div> */}
-            <h5 className='font-bold mt-2'>Duration: {Duration}</h5>
+        <div className='mt-4 flex flex-col gap-3 mb-2 text-center'>
+       
+            <h5 className='font-bold mt-2'>Genre: {Genre}</h5>
+            <h5 className='font-bold mt-2'>Duration: {Duration}min</h5>
             <h5 className='font-bold mt-2'>Release Year: {ReleaseYear}</h5>
             <h5 className='font-bold mt-2'>Rating: {Rating}</h5>
-            <h5 className='font-bold mt-2'>User: {userEmail}</h5>
+            <h5 className='font-bold mt-2'>Summary : {Summary}</h5>
+            <h5 className='font-bold mt-2'>Added by : {userEmail}</h5>
 
         </div>
     </div>
-    <div className='flex justify-center gap-5 mt-10'>
+    <div className='flex justify-center gap-2 md:gap-5 mt-10'>
        
-                     <button onClick={() => handleAddToFavorite(data)} className='btn  font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-40 hover:text-white hover:bg-[#1E2A47]'>Add to favorite</button>
+                     <button onClick={() => handleAddToFavorite(data)} className='btn  font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-28 md:w-40 hover:text-white hover:bg-[#1E2A47]'>Add to favorite</button>
                 
       
-                     <button  onClick={() => handleDelete(_id)} className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-40 hover:text-white hover:bg-[#1E2A47]'>Delete Movie</button>
+                     <button  onClick={() => handleDelete(_id)} className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-28 md:w-40 hover:text-white hover:bg-[#1E2A47]'>Delete Movie</button>
                
        <Link to={`/update/${_id}`}>
-                     <button className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-40 hover:text-white hover:bg-[#1E2A47]'>Update Movie</button>
+                     <button className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-28 md:w-40 hover:text-white hover:bg-[#1E2A47]'>Update Movie</button>
                 </Link>
        </div>
        

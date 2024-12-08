@@ -1,0 +1,25 @@
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+  }
+  
+  .card {
+    background-color: #1E1E1E;
+    color: #B3B3B3;
+    border: 1px solid #333333;
+  }
+  
+  .card:hover {
+    background-color: #303030;
+  }
+  
+  .button {
+    background-color: #E50914;
+    color: #FFFFFF;
+    border: none;
+  }
+  
+  .button:hover {
+    background-color: #FF1C1C;
+  }
+  

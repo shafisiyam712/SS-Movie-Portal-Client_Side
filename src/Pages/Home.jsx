@@ -4,6 +4,8 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../Components/Footer';
 import Banner from '../Components/Banner';
 import Header from '../Components/Header';
+import Upcoming from '../Components/Upcoming';
+import Podcust from '../Components/Podcust';
 
 const Home = () => {
     return (
@@ -11,6 +13,8 @@ const Home = () => {
              <Banner></Banner>
              <Header></Header>
              <Outlet></Outlet>
+             <Upcoming></Upcoming>
+             <Podcust></Podcust>
              
         </div>
     );

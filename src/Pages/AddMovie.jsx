@@ -78,28 +78,27 @@ const AddMovie = () => {
     return (
         <div className='lg:w-3/4 mx-auto'>
             <div className="text-center p-10">
-                <h1 className="text-5xl font-bold">Add Movie!</h1>
+                <h1 className="text-5xl font-bold">Add Movie</h1>
                 <p className="py-6">
-                    Provident cupiditate voluptatem et in.Quaerat fugiat ut assumenda excepturi exercitationem
-                    quasi. In deleniti eaque aut repudiandae et a id nisi.
+                   Add your movie.Just fill up the form with your movie information.It will up to our website.You can find it All movies section and if it is high rated then you can see it in our home page!!
                 </p>
             </div>
-            <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
-                <form onSubmit={handleAddmovie} className="card-body">
+            <div className="card bg-base-100 w-full shrink-0 shadow-2xl rounded-xl">
+                <form onSubmit={handleAddmovie} className="card-body bg-[#1E2A47] rounded-xl">
                     {/* form first row */}
                     <div className='flex flex-col lg:flex-row gap-5'>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text">Photo URL</span>
+                                <span className="label-text text-white">Photo URL</span>
                             </label>
-                            <input type="text" name='photoUrl' placeholder="Photo url" className="input input-bordered" required />
+                            <input type="text" name='photoUrl' placeholder="Photo url" className="input input-bordered text-black" required />
 
                         </div>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text">Movie Title</span>
+                                <span className="label-text text-white">Movie Title</span>
                             </label>
-                            <input type="text" name='movieTitle' placeholder="Title" className="input input-bordered" required />
+                            <input type="text" name='movieTitle' placeholder="Title" className="input input-bordered text-black" required />
                         </div>
 
                     </div>
@@ -108,9 +107,9 @@ const AddMovie = () => {
 
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text">Genre</span>
+                                <span className="label-text text-white">Genre</span>
                             </label>
-                            <select name="genre" className="select select-bordered" required>
+                            <select name="genre" className="select select-bordered text-black" required>
                             <option value="" disabled selected>Select Genre</option>
                                 <option value="Sci-Fi">Sci-Fi</option>
                                 <option value="Horror">Horror</option>
@@ -124,19 +123,19 @@ const AddMovie = () => {
 
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text">Duration</span>
+                                <span className="label-text text-white">Duration</span>
                             </label>
-                            <input type="number" name='duration' placeholder="Duration" className="input input-bordered" required />
+                            <input type="number" name='duration' placeholder="Duration" className="input input-bordered text-black" required />
                         </div>
                     </div>
                     {/* form third row */}
                     <div className='flex flex-col lg:flex-row gap-5'>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text">Release Year</span>
+                                <span className="label-text text-white">Release Year</span>
                             </label>
                             {/* <input type="number" name='releaseYear' placeholder="Release Year" className="input input-bordered" required /> */}
-                            <select name="releaseYear" className="select select-bordered" required>
+                            <select name="releaseYear" className="select select-bordered text-black" required>
                             <option value="" disabled selected>Select Year</option>
                                 <option value="2024">2024</option>
                                 <option value="2023">2023</option>
@@ -150,9 +149,9 @@ const AddMovie = () => {
                         </div>
                         <div className="form-control flex-1">
                             <label className="label">
-                                <span className="label-text">Rating</span>
+                                <span className="label-text text-white">Rating</span>
                             </label>
-                            <input type='text' name='rating' placeholder="Rating" className="input input-bordered" required />
+                            <input type='text' name='rating' placeholder="Rating" className="input input-bordered text-black" required />
 
                             {/* <ReactStars
                                 count={5} // Number of stars
@@ -172,16 +171,16 @@ const AddMovie = () => {
                     <br />
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Summary</span>
+                            <span className="label-text text-white">Summary</span>
                         </label>
 
-                        <textarea className='border' name="summary" id="" cols="30" rows='5'></textarea>
+                        <textarea className='border text-black' name="summary" id="" cols="30" rows='5'></textarea>
                     </div>
 
 
                     {error && <p className="text-red-500">{error}</p>}
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Add Movie</button>
+                    <button className='btn font-bold border border-[#1E2A47] rounded-full w-2/6 mx-auto text-[#1E2A47]  hover:text-white hover:bg-[#1E2A47]'>Add movie</button>
                     </div>
                 </form>
             </div>
