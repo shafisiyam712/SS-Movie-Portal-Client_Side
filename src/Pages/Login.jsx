@@ -1,10 +1,8 @@
 import React from 'react';
-
-/* eslint-disable no-unused-vars */
 import { useContext, useRef, useState } from "react";
 import { authContext } from "../Components/AuthProvider";
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-//import { auth } from "../Firebase/FirebaseInt";
+
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 const Login = () => {
@@ -35,8 +33,6 @@ const Login = () => {
            
             })
             .catch(error => {
-               // console.log('Error', error.message);
-                //setError({ message: error.message });
                 setError({ message: 'User email & password is not valid!!' });
             })
 
@@ -44,20 +40,11 @@ const Login = () => {
     const HandleWithGoogle = () => {
         singInWithGoogle()
             .then(result => {
-                // console.log(result.user);
                 navigate('/')
                 navigate(location.state.from)
             })
     }
-    // const handleForgetPassword = () => {
-    //     const email = emailRef.current?.value || ''; 
-    // if (!email) {
-    //     navigate('/forget');
-    // } else {
-       
-    //     navigate('/forget', { state: { email } });
-    // }
-    // }
+
     return (
         <div className="hero  min-h-screen">
             <div className="hero-content flex-col lg:flex">

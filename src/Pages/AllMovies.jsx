@@ -1,21 +1,46 @@
-import React from 'react';
-// import MovieCard from './MovieCard';
+import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import MovieCard from '../Components/MovieCard';
 
 const AllMovies = () => {
-    const data=useLoaderData()
+    const movie=useLoaderData()
+    const [search,setSearch]=useState("")
+    const [movieData,setMovieData]=useState(movie)
+    useEffect(()=>{
+        fetch(`https://milestone-10-server-side.vercel.app/movies?searchParams=${search}`)
+        .then((res)=>res.json())
+        .then((data)=>{
+            console.log(data);
+           setMovieData(data)
+           
+           
+        })
+    },[search])
     return (
         <div>
              <div className="text-center my-14 space-y-2 ">
             <h1 className="font-extrabold text-white text-3xl mb-3">Explore Our Vast Collections of movies</h1>
             <h2>There is a huge collections of movies added by our users and admins.</h2>
+            <div className="w-[400px] mx-auto mb-4">
+        <input 
+           onChange={(e) => {
+            console.log("Search Input:", e.target.value); // Debugging
+            setSearch(e.target.value);
+        }}
+          type="text"
+          name="search"
+          placeholder="search"
+          className="input input-bordered w-full text-black"
+          required
+        />
+      </div>
+            
         </div>
         <div className="w-11/12 mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-2 mt-10">
      
                {
                   
-                  data.map( movies=> (
+                  movieData.map( movies=> (
            
              <MovieCard key={movies._id} movies={movies}></MovieCard>))
              } 
