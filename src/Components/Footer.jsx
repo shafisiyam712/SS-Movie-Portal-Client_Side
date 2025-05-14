@@ -1,18 +1,20 @@
 import React from 'react';
-
+import logo2 from '../assets/Logo/icons8-movie-100.png'
 const Footer = () => {
     return (
 
       <div className='bg-[#1E2A47] md:h-96'>
-          <div className="bg-[#1E2A47] mt-10 p-16 flex flex-col md:flex-row">
-        <div className="md:w-2/5 mb-10 md:mb-0">
-          <div className="flex mb-3">
-            <h1 className="font-extrabold text-2xl text-white">SS-MOVIE PORTAL</h1>
+          <div className="bg-[#1E2A47] mt-5 p-10 flex flex-col md:flex-row">
+        <div className="md:w-2/5 mb-10 md:mb-0 ml-10">
+          <div className="flex  flex-col mb-3">
+            <img className='w-20 h-20 ml-4' src={logo2} alt="" />
+            <h1 className="font-extrabold text-2xl text-white">SS Movies</h1>
           </div>
           <p className="text-white">
+            39/2 Muktijoddha sarak,Narayanganj <br />
             Phone: +8801644898184 <br />
             Email: ShafiSiyam674@gmail.com <br />
-            Dont forget to visit our social sites <br />
+            {/* Dont forget to visit our social sites  */}
           </p>
           
           <div className="flex gap-2 mt-4">
@@ -52,19 +54,19 @@ const Footer = () => {
             <h3 className="text-white md:ml-12 text-lg">Drop a Message</h3>
           </div>
           <input
-            className="bg-slate-600 text-white my-5 rounded-md h-10 w-52 border-none md:ml-32 p-3"
-            placeholder="Enter your Email"
+            className=" text-black my-5 rounded-md h-10 w-52 border-none md:ml-32 p-3"
+            placeholder="Enter your message"
             type="text"
           />
           <div>
-            <button className="btn  bg-white text-[#1E2A47] hover:bg-[#BEE3E2] hover:text-white w-52 md:ml-32">Send</button>
+            <button className="btn  bg-white text-[#1E2A47] hover:text-white hover:bg-[#1E2A47] w-52 md:ml-32">Send</button>
           </div>
           
         </div>
         
       </div>
        <hr />
-      <h3 className="text-white text-lg text-center">Copyright@2024</h3>
+      <h3 className="text-white text-lg text-center">Copyright@2025</h3>
       </div>
         
     )
