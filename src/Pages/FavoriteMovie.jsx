@@ -5,6 +5,10 @@ const FavoriteMovie = () => {
     const { favorites,removeFavorite,user,clearUserDataOnLogout} = useContext(authContext);
     console.log(favorites);
     const {_id,MoviePoster,MovieTitle,Genre,Duration,ReleaseYear,Rating,Summary,userEmail}=  favorites
+console.log(user.
+  displayName);
+  const name=user.
+  displayName
 
   useEffect(() => {
     if (!user?.email) {
@@ -38,7 +42,7 @@ const FavoriteMovie = () => {
     
     return (
         <div className='mt-5'>
-        <h1 className="text-3xl font-extrabold text-[#121212] dark:text-white  mb-4 text-center">Your Favorite Movies : {favorites.length}</h1>
+        <h1 className="text-3xl font-extrabold text-[#121212] dark:text-white  mb-4 text-center">{name}'s Favorite Movies : {favorites.length}</h1>
         <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
             {favorites.length > 0 ? (
                 favorites.map((movie) => (
@@ -50,10 +54,10 @@ const FavoriteMovie = () => {
                         />
                         <div className='flex flex-col text-center items-center space-y-2'>
                         <h2 className="font-bold text-xl mb-2">{movie.MovieTitle}</h2>
-                        <p className="text-white">Genre: {movie.Genre}</p>
-                        <p className="text-white">Duration: {movie.Duration}min</p>
-                        <p className="text-white">Release Year: {movie.ReleaseYear}</p>
-                        <p className="text-white">Rating: {movie.Rating}</p>
+                        <p className="dark:text-white text-black">Genre: {movie.Genre}</p>
+                        <p className="dark:text-white text-black">Duration: {movie.Duration}min</p>
+                        <p className="dark:text-white text-black">Release Year: {movie.ReleaseYear}</p>
+                        <p className="dark:text-white text-black">Rating: {movie.Rating}</p>
 
                         <button   onClick={() => handleRemove(movie._id)} className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] w-40 hover:text-white hover:bg-[#1E2A47]'>Delete Movie</button>
                         </div>
