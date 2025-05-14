@@ -3,7 +3,7 @@ import React from 'react';
 const Upcoming = () => {
     return (
         <div className='mt-20'>
- <h1 className="font-extrabold text-white text-3xl mb-3 text-center">Upcoming Movies</h1>
+ <h1 className="font-extrabold dark:text-white text-[#121212] text-3xl mb-3 text-center">Upcoming Movies</h1>
  <h2 className='text-center mb-5'>This movies will be available in our website in the next month</h2>
             <div className='w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 <div className="card border p-4 rounded-lg shadow-lg">

@@ -74,7 +74,7 @@ const UpdateMovie = () => {
     return (
         <div className='lg:w-3/4 mx-auto'>
             <div className="text-center p-10">
-                <h1 className="text-5xl font-bold">Update your Movie</h1>
+                <h1 className="text-3xl font-extrabold text-[#121212] dark:text-white">Update your Movie</h1>
                 <p className="py-6">
                     You can update your movie information just change the field you as you want.We update this information to your movie. 
                 </p>

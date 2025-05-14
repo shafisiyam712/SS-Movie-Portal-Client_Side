@@ -78,7 +78,7 @@ const AddMovie = () => {
     return (
         <div className='lg:w-3/4 mx-auto'>
             <div className="text-center p-10">
-                <h1 className="text-5xl font-bold">Add Movie</h1>
+                <h1 className="text-3xl font-extrabold text-[#121212] dark:text-white">Add Movie</h1>
                 <p className="py-6">
                    Add your movie.Just fill up the form with your movie information.It will up to our website.You can find it All movies section and if it is high rated then you can see it in our home page!!
                 </p>

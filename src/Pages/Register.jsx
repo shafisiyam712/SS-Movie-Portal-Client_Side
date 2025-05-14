@@ -4,6 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { authContext } from '../Components/AuthProvider';
+import Lottie from 'lottie-react';
+import registerLottie from '../assets/Lottie/register.json'
+import Swal from 'sweetalert2'
 const Register = () => {
     const {createUser,manageProfile,singInWithGoogle}=useContext(authContext)
     const [error,setError] = useState("")
@@ -35,7 +38,12 @@ const Register = () => {
             // console.log(result.user);
             manageProfile(name,image)
             // console.log(name,image);
-            
+            Swal.fire({
+              title: 'Success!',
+              text: 'Registration successful!!',
+              icon: 'success',
+              confirmButtonText: 'Ok'
+          });
             navigate('/')
         })
         .catch(ero=>{
@@ -52,72 +60,82 @@ const Register = () => {
         singInWithGoogle()
             .then(result => {
                 // console.log(result.user);
+                Swal.fire({
+                  title: 'Success!',
+                  text: 'Registration successful!!',
+                  icon: 'success',
+                  confirmButtonText: 'Ok'
+              });
                 navigate('/')
                 navigate(location.state.from)
             })
     }
     return (
-        <div className="hero min-h-screen ">
-        <div className="hero-content flex-col lg:flex ">
-          <div className="text-center lg:text-left">
-            <h1 className="text-5xl font-bold">Register now!</h1>
-          </div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-            <form onSubmit={handleRegister}  className="card-body bg-[#1E2A47]">
+      <div className="hero min-h-screen flex flex-col md:flex-row-reverse w-11/12 mx-auto justify-center">
+      <div className='w-1/2 md:w-1/3 mt-10 '>
+           <Lottie animationData={registerLottie}></Lottie>
+           
+       </div>
+   <div className="hero-content flex-col lg:flex ">
+     <div className="text-center lg:text-left">
+       <h1 className="text-[#1E2A47] dark:text-white text-5xl font-bold">Register now!</h1>
+     </div>
+     <div className="card bg-base-100 dark:bg-[#1E2A47] w-full max-w-sm shrink-0 shadow-2xl">
+       <form onSubmit={handleRegister}  className="card-body ">
 
-            <div className="form-control">
-                <label className="label">
-                  <span className="label-text text-white">Name</span>
-                </label>
-                <input type="text" name='name' placeholder="Name" className="input input-bordered text-black" required />
-              </div>   
+       <div className="form-control">
+           <label className="label">
+             <span className="label-text text-[#1E2A47] dark:text-white">Name</span>
+           </label>
+           <input type="text" name='name' placeholder="Name" className="input input-bordered text-black" required />
+         </div>   
 
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text  text-white">Email</span>
-                </label>
-                <input type="email" name='email' placeholder="email" className="input input-bordered  text-black" required />
-              </div>
+         <div className="form-control">
+           <label className="label">
+             <span className="label-text text-[#1E2A47] dark:text-white">Email</span>
+           </label>
+           <input type="email" name='email' placeholder="email" className="input input-bordered  text-black" required />
+         </div>
 
-              <div className="form-control">
-                <label className="label">
-                  <span className="label-text  text-white">Photo-Url</span>
-                </label>
-                <input type="text" name='image' placeholder="url" className="input input-bordered  text-black" required />
-              </div>
+         <div className="form-control">
+           <label className="label">
+             <span className="label-text text-[#1E2A47] dark:text-white">Photo-Url</span>
+           </label>
+           <input type="text" name='image' placeholder="url" className="input input-bordered  text-black" required />
+         </div>
 
-              <div className="form-control relative">
-                <label className="label">
-                  <span className="label-text  text-white">Password</span>
-                </label>
-                <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered text-black" required />
+         <div className="form-control relative">
+           <label className="label">
+             <span className="label-text  text-[#1E2A47] dark:text-white">Password</span>
+           </label>
+           <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" className="input input-bordered text-black" required />
 
-                <button
-                            type="button"
-                        onClick={() => setShowPassword(!showPassword)}
-                        className='btn btn-xs absolute right-2 top-12'>
-                        {
-                            showPassword ?<FaEye></FaEye> :
-                             <FaEyeSlash></FaEyeSlash>  
-                        }
-                    </button>
+           <button
+                       type="button"
+                   onClick={() => setShowPassword(!showPassword)}
+                   className='btn btn-xs absolute right-2 top-12'>
+                   {
+                       showPassword ?<FaEye></FaEye> :
+                        <FaEyeSlash></FaEyeSlash>  
+                   }
+               </button>
 
-              </div>
-              {error && <p className="text-red-500">{error}</p>}
-              <div className="form-control mt-6">
-              <button className='btn font-bold border border-[#1E2A47]  text-[#1E2A47] hover:text-white hover:bg-[#1E2A47]'>Register</button>
-              </div>
-              <p className='ml-4 mb-4 cursor-pointer'>
-                Already have an account? please <Link to='/login' className="text-blue-500 hover:underline hover:text-white">Login</Link>
-              </p>
-            </form>
-            <div className="flex gap-1 justify-center items-center bg-[#1E2A47]">
-                    <FcGoogle className="h-14 w-14 mb-3"></FcGoogle>
-                    <button onClick={HandleWithGoogle} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">Google Sing In</button>
-                    </div>
-          </div>
-        </div>
-      </div>
+         </div>
+         {error && <p className="text-red-500">{error}</p>}
+         <div className="form-control mt-6">
+         <button className='btn font-bold border border-[#1E2A47]  text-[#1E2A47] hover:text-white hover:bg-[#1E2A47]'>Register</button>
+         </div>
+         <p className='ml-4 mb-4 cursor-pointer text-[#1E2A47] dark:text-white'>
+           Already have an account? please <Link to='/login' className="text-blue-500 hover:underline hover:text-[#1E2A47]">Login</Link>
+         </p>
+       </form>
+       <div className="flex gap-1 justify-center items-center ">
+               <FcGoogle className="h-14 w-14 mb-3"></FcGoogle>
+               <button onClick={HandleWithGoogle} className="btn w-40 rounded-full bg-white text-[#1E2A47] hover:bg-[#1E2A47] hover:text-white ">Google Sing In</button>
+               </div>
+     </div>
+   </div>
+ </div>
     );
 };
 

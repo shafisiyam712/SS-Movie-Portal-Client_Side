@@ -38,8 +38,8 @@ const FavoriteMovie = () => {
     
     return (
         <div className='mt-5'>
-        <h1 className="text-2xl font-bold mb-4 text-center">Your Favorite Movies</h1>
-        <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <h1 className="text-3xl font-extrabold text-[#121212] dark:text-white  mb-4 text-center">Your Favorite Movies : {favorites.length}</h1>
+        <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
             {favorites.length > 0 ? (
                 favorites.map((movie) => (
                     <div key={movie._id} className="card border p-4 rounded-lg shadow-lg">
@@ -62,7 +62,10 @@ const FavoriteMovie = () => {
                     </div>
                 ))
             ) : (
-                <p className="text-white text-center">No favorite movies added yet</p>
+              <div className="text-center">
+                <p className="text-[#121212] dark:text-white ">No favorite movies added yet</p>
+              </div>
+                
             )}
         </div>
     </div>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Podcust = () => {
     return (
         <div className="w-11/12 mx-auto mt-20">
-            <h1 className="text-center font-bold text-2xl text-white mb-5">This Month Director Talks</h1>
+            <h1 className="text-center font-extrabold text-[#121212] text-3xl  dark:text-white mb-5">This Month Director Talks</h1>
             <h2 className='text-center mb-5'>Watch famous director interview and there plans for Upcoming movies</h2>
             <div className="w-11/12 mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-2 mt-8">
                 <div className='card border border-rounded-xl border-[#1E2A47] shadow-xl overflow-hidden p-4 mb-2 gap-3'>

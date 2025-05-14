@@ -19,7 +19,7 @@ const AllMovies = () => {
     return (
         <div>
              <div className="text-center my-14 space-y-2">
-            <h1 className="font-extrabold text-white text-3xl mb-3">Explore Our Vast Collections of movies</h1>
+            <h1 className="font-extrabold text-[#121212] dark:text-white text-3xl mb-3">Explore Our Vast Collections of movies</h1>
             <h2>There is a huge collections of movies added by our users and admins.</h2>
             <div className="w-[400px] mx-auto mb-4">
         <input 
