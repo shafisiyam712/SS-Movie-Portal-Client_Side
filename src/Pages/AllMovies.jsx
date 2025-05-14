@@ -18,7 +18,7 @@ const AllMovies = () => {
     },[search])
     return (
         <div>
-             <div className="text-center my-14 space-y-2 ">
+             <div className="text-center my-14 space-y-2">
             <h1 className="font-extrabold text-white text-3xl mb-3">Explore Our Vast Collections of movies</h1>
             <h2>There is a huge collections of movies added by our users and admins.</h2>
             <div className="w-[400px] mx-auto mb-4">
@@ -36,7 +36,7 @@ const AllMovies = () => {
       </div>
             
         </div>
-        <div className="w-11/12 mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-2 mt-10">
+        <div className="w-11/12 mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-2 mt-10 pl-7">
      
                {
                   
@@ -46,11 +46,11 @@ const AllMovies = () => {
              } 
              
              
-             
+             {/* w-2/3 md:w-1/5 mx-auto mt-10 */}
          </div>
-         <div className='w-2/3 md:w-1/5 mx-auto mt-10'>
+         <div className='w-36 mx-auto mt-10 pl-2'>
        <Link to={`/allmovies`}>
-                     <button className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47] md:w-1/2 hover:text-white hover:bg-[#1E2A47]'>See All Movies</button>
+                     <button className='btn font-bold border border-[#1E2A47] rounded-full text-[#1E2A47]  hover:text-white hover:bg-[#1E2A47]'>See All Movies</button>
                 </Link>
        </div> 
       
