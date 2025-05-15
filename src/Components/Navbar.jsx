@@ -13,7 +13,7 @@ const Navbar = () => {
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/allmovies'>All Movies</NavLink></li>
     <li><NavLink to='/addmovie'>Add Movies</NavLink></li>
-    <li><NavLink to='/profile'>My Profile</NavLink></li>
+    <li><NavLink to='/profile'>Dashboard</NavLink></li>
     <li><NavLink to='/favorite'>My Favorites</NavLink></li>
     <li><NavLink to='/about'>About</NavLink></li>
     
@@ -49,8 +49,7 @@ const handleSingOut=()=>{
               </svg>
             </div>
             <ul
-              // tabIndex={0}
-              // className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+             
               tabIndex={0}
               className={`menu menu-sm dropdown-content rounded-box z-[1] mt-3 w-52 p-2 shadow ${
                 mode === "dark" ? "bg-[#121212] text-white" : "bg-base-100"
@@ -61,14 +60,10 @@ const handleSingOut=()=>{
           <div className='flex justify-center items-center'>
             <img className='w-12' src={logo} alt="" />
          
-          <h3 className="text-xl font-bold text-white text-center">SS-Movies</h3>
+          <h3 className="text-xl font-bold text-white text-center">SS-Movie Portal</h3>
           </div>
         </div>
-        {/* <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
-            {links}
-          </ul>
-        </div> */}
+       
         <div className="navbar-center hidden lg:flex">
   <ul className={`menu menu-horizontal px-1 ${mode === "light" ? "text-white" : ""}`}>
     {links}

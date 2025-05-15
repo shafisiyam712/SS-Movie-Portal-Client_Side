@@ -11,7 +11,7 @@ const About = () => {
             <div className="flex justify-center text-center gap-3 space-y-3">
                  <img className='w-24 h-24 mt-2' src={logo2} alt="" />
                  <div>
-                     <h1 className="font-extrabold text-3xl mt-10  dark:text-white text-[#121212]">SS Movies</h1>
+                     <h1 className="font-extrabold text-3xl mt-10  dark:text-white text-[#121212]">SS Movie Portal</h1>
                  </div>
                            
             </div>

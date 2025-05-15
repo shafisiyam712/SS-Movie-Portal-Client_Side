@@ -61,7 +61,7 @@ const UpdateMovie = () => {
                     console.log('successfully updated');
                     Swal.fire({
                         title: 'Success!',
-                        text: 'Coffee updated successfully',
+                        text: 'Movie updated successfully',
                         icon: 'success',
                         confirmButtonText: 'Ok'
                     });
@@ -176,7 +176,7 @@ const UpdateMovie = () => {
 
                     {error && <p className="text-red-500">{error}</p>}
                     <div className="form-control mt-6">
-                    <button className='btn font-bold border border-[#1E2A47] rounded-full w-2/6 mx-auto text-[#1E2A47]  hover:text-white hover:bg-[#1E2A47]'>Add movie</button>
+                    <button className='btn font-bold border border-[#1E2A47] rounded-full w-2/6 mx-auto text-[#1E2A47]  hover:text-white hover:bg-[#1E2A47]'>Update movie</button>
                     </div>
                 </form>
             </div>

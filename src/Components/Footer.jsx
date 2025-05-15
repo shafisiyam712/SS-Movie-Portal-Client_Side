@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="md:w-2/5 mb-10 md:mb-0 ml-10">
           <div className="flex  flex-col mb-3">
             <img className='w-20 h-20 ml-4' src={logo2} alt="" />
-            <h1 className="font-extrabold text-2xl text-white">SS Movies</h1>
+            <h1 className="font-extrabold text-2xl text-white">SS Movie Portal</h1>
           </div>
           <p className="text-white">
             39/2 Muktijoddha sarak,Narayanganj <br />
@@ -41,8 +41,8 @@ const Footer = () => {
             <h3 className="text-white ml-20 md:ml-20 text-lg">Useful links</h3>
           </div>
           <div className="flex flex-col gap-3 ml-20 md:ml-20">
-            <a className="text-white" href="#">Home</a>
-            <a className="text-white" href="#">AboutUs</a>
+            <a className="text-white" href="/">Home</a>
+            <a className="text-white" href="/about">AboutUs</a>
             <a className="text-white" href="#">Locations</a>
             <a className="text-white" href="#">Blogs</a>
             <a className="text-white" href="#">Contact</a>
