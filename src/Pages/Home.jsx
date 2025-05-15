@@ -5,7 +5,7 @@ import Footer from '../Components/Footer';
 import Banner from '../Components/Banner';
 import Header from '../Components/Header';
 import Upcoming from '../Components/Upcoming';
-import Podcust from '../Components/Podcust';
+import Podcast from '../Components/Podcast';
 import Newsletter from '../Components/Newsletter';
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
              <Header></Header>
              <Outlet></Outlet>
              <Upcoming></Upcoming>
-             <Podcust></Podcust>
+             <Podcast></Podcast>
              <Newsletter></Newsletter>
              
         </div>
