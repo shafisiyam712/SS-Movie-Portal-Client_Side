@@ -6,7 +6,7 @@ const Movies = () => {
     const data=useLoaderData()
     return (
         <div>
-        <div className="w-11/12 mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-2 mt-10 pl-7">
+        <div className="w-11/12 mx-auto grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 gap-2 pl-7">
      
               {
                   

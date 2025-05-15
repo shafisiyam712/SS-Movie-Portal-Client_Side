@@ -72,14 +72,14 @@ const UpdateMovie = () => {
         }     
 
     return (
-        <div className='lg:w-3/4 mx-auto'>
-            <div className="text-center p-10">
+        <div className='lg:w-3/4 mx-auto pl-3 pr-3'>
+            <div className="text-center mt-10">
                 <h1 className="text-3xl font-extrabold text-[#121212] dark:text-white">Update your Movie</h1>
-                <p className="py-6">
+                <p className="py-5">
                     You can update your movie information just change the field you as you want.We update this information to your movie. 
                 </p>
             </div>
-            <div className="card bg-base-100 w-full shrink-0 shadow-2xl rounded-xl">
+            <div className="card bg-base-100 w-full shrink-0 shadow-2xl rounded-xl mt-5 mb-10">
                 <form onSubmit={handleUpdateMovie} className="card-body bg-[#1E2A47] rounded-xl">
                     {/* form first row */}
                     <div className='flex flex-col lg:flex-row gap-5'>

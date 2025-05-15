@@ -72,7 +72,7 @@ const MovieDetails = () => {
     return (
         <div className="w-11/12 mx-auto">
              
-        <div className='card w-2/3 mx-auto mt-10 border border-rounded-xl shadow-xl overflow-hidden p-4 mb-2 gap-3'>
+        <div className='card w-4/5 md:w-2/3 mx-auto mt-10 border border-rounded-xl shadow-xl overflow-hidden p-4 mb-2 gap-3'>
         <div className='mb-2  space-y-4 '>
     <img className='w-full h-60 border rounded-xl' src={MoviePoster} alt={`Cover picture of the title`} />
 </div>  

@@ -6,7 +6,7 @@ const Header = () => {
     return (
       
               <div className="text-center my-20 space-y-2 ">
-            <h1 className="font-extrabold text-[#121212] dark:text-white text-3xl">Our Featured movies</h1>
+            <h1 className="font-extrabold text-[#121212] dark:text-white text-3xl mb-5">Our Featured movies</h1>
             <h2>Here you will see the top rated movies of our site.You also can add movies in our site and make your movie feature like others!!!</h2>
         </div>
       

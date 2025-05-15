@@ -76,14 +76,14 @@ const AddMovie = () => {
 
 
     return (
-        <div className='lg:w-3/4 mx-auto'>
-            <div className="text-center p-10">
+        <div className='lg:w-3/4 mx-auto  pl-3 pr-3'>
+            <div className="text-center mt-10">
                 <h1 className="text-3xl font-extrabold text-[#121212] dark:text-white">Add Movie</h1>
-                <p className="py-6">
+                <p className="py-5">
                    Add your movie.Just fill up the form with your movie information.It will up to our website.You can find it All movies section and if it is high rated then you can see it in our home page!!
                 </p>
             </div>
-            <div className="card bg-base-100 w-full shrink-0 shadow-2xl rounded-xl">
+            <div className="card bg-base-100 w-full shrink-0 shadow-2xl rounded-xl mt-5 mb-10">
                 <form onSubmit={handleAddmovie} className="card-body bg-[#1E2A47] rounded-xl">
                     {/* form first row */}
                     <div className='flex flex-col lg:flex-row gap-5'>

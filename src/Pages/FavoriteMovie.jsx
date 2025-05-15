@@ -41,7 +41,7 @@ console.log(user.
   };   
     
     return (
-        <div className='mt-5'>
+        <div className='my-10'>
         <h1 className="text-3xl font-extrabold text-[#121212] dark:text-white  mb-4 text-center">{name}'s Favorite Movies : {favorites.length}</h1>
         <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10">
             {favorites.length > 0 ? (
