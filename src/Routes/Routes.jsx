@@ -12,6 +12,8 @@ import AddMovie from "../Pages/AddMovie"
 import ErrorPage from "../Pages/ErrorPage"
 import FavoriteMovie from "../Pages/FavoriteMovie"
 import UpdateMovie from "../Pages/UpdateMovie"
+import UserProfile from "../Pages/UserProfile"
+import UpdateProfile from "../Pages/UpdateProfile"
 
 
 const routes = createBrowserRouter([
@@ -67,6 +69,15 @@ const routes = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>,
+            },
+            {
+                path: '/profile',
+                element :<PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+               
+            },
+            {
+                path: '/updateProfile',
+                element :<PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
             },
            
         ] 

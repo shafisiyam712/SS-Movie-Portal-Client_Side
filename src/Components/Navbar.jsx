@@ -13,6 +13,7 @@ const Navbar = () => {
     <li><NavLink to='/'>Home</NavLink></li>
     <li><NavLink to='/allmovies'>All Movies</NavLink></li>
     <li><NavLink to='/addmovie'>Add Movies</NavLink></li>
+    <li><NavLink to='/profile'>My Profile</NavLink></li>
     <li><NavLink to='/favorite'>My Favorites</NavLink></li>
     <li><NavLink to='/about'>About</NavLink></li>
     
