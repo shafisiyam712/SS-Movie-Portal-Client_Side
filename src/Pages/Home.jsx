@@ -6,6 +6,7 @@ import Banner from '../Components/Banner';
 import Header from '../Components/Header';
 import Upcoming from '../Components/Upcoming';
 import Podcust from '../Components/Podcust';
+import Newsletter from '../Components/Newsletter';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
              <Outlet></Outlet>
              <Upcoming></Upcoming>
              <Podcust></Podcust>
+             <Newsletter></Newsletter>
              
         </div>
     );
