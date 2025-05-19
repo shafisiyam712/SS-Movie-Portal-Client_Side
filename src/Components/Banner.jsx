@@ -1,79 +1,75 @@
-import React from 'react';
-
-
+import React, { useEffect, useState } from 'react';
 
 const Banner = () => {
+  const slides = [
+    {
+      id: "slide1",
+      title: "Inception",
+      image: "https://i.ibb.co/Gdr6WZ5/Feature-3-1.png",
+      next: "slide2",
+      prev: "slide4",
+    },
+    {
+      id: "slide2",
+      title: "The Dark Knight",
+      image: "https://i.ibb.co/Q6jRzqz/tdk-poster-1.webp",
+      next: "slide3",
+      prev: "slide1",
+    },
+    {
+      id: "slide3",
+      title: "Mission: Impossible 8",
+      image: "https://i.ibb.co/K0bZdr1/mission-impossible-web-poster-e1689560939874.jpg",
+      next: "slide4",
+      prev: "slide2",
+    },
+    {
+      id: "slide4",
+      title: "Interstellar",
+      image: "https://i.ibb.co/bQYwtZp/71lj-C3i-8u-L-AC-UF894-1000-QL80.jpg",
+      next: "slide1",
+      prev: "slide3",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+      window.location.hash = slides[(currentIndex + 1) % slides.length].id;
+    }, 4000); // 4 seconds
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
   return (
     <div className="shadow-xl">
-      <div className="carousel">
-        <div id="slide1" className="carousel-item relative w-full">
-          <img
-            src="https://i.ibb.co.com/Gdr6WZ5/Feature-3-1.png"
-            className="w-full h-[300px] object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <h2 className="text-white text-3xl font-bold">Inception</h2>
+      <div className="carousel w-full">
+        {slides.map(({ id, title, image, next, prev }) => (
+          <div key={id} id={id} className="carousel-item relative w-full">
+            <img
+              src={image}
+              alt={title}
+              className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center text-center px-4">
+              <h2 className="text-white text-3xl md:text-5xl font-extrabold drop-shadow-lg">
+                {title}
+              </h2>
+              <p className="text-gray-200 text-sm md:text-lg mt-2 max-w-md drop-shadow-sm">
+                Experience the thrill, drama, and action like never before.
+              </p>
+              <button className="mt-4 px-5 py-2 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-lg transition duration-300 shadow-lg">
+                Watch Now
+              </button>
+            </div>
+            <div className="absolute left-5 right-5 top-1/2 transform -translate-y-1/2 flex justify-between">
+              <a href={`#${prev}`} className="btn btn-circle bg-black bg-opacity-50 text-white border-none hover:bg-opacity-80">❮</a>
+              <a href={`#${next}`} className="btn btn-circle bg-black bg-opacity-50 text-white border-none hover:bg-opacity-80">❯</a>
+            </div>
           </div>
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a href="#slide4" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide2" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide2" className="carousel-item relative w-full">
-          <img
-            src="https://i.ibb.co.com/Q6jRzqz/tdk-poster-1.webp"
-            className="w-full h-[300px] object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <h2 className="text-white text-3xl font-bold">The Dark Knight</h2>
-          </div>
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a href="#slide1" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide3" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide3" className="carousel-item relative w-full">
-          <img
-            src="https://i.ibb.co.com/K0bZdr1/mission-impossible-web-poster-e1689560939874.jpg"
-            className="w-full h-[300px] object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <h2 className="text-white text-3xl font-bold">Mission:Impossible-8</h2>
-          </div>
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a href="#slide2" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide4" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
-        <div id="slide4" className="carousel-item relative w-full">
-          <img
-            src="https://i.ibb.co.com/bQYwtZp/71lj-C3i-8u-L-AC-UF894-1000-QL80.jpg"
-            className="w-full h-[300px] object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-            <h2 className="text-white text-3xl font-bold">Interstellar</h2>
-          </div>
-          <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-            <a href="#slide3" className="btn btn-circle">
-              ❮
-            </a>
-            <a href="#slide1" className="btn btn-circle">
-              ❯
-            </a>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
