@@ -7,6 +7,7 @@ import Header from '../Components/Header';
 import Upcoming from '../Components/Upcoming';
 import Podcast from '../Components/Podcast';
 import Newsletter from '../Components/Newsletter';
+import MemberShip from '../Components/MemberShip';
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
              <Outlet></Outlet>
              <Upcoming></Upcoming>
              <Podcast></Podcast>
+             <MemberShip></MemberShip>
              <Newsletter></Newsletter>
              
         </div>
